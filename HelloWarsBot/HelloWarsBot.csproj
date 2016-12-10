@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BusinessLogic\Interface\" />
     <Folder Include="Image\" />
     <Folder Include="Models\Algorithm\" />
   </ItemGroup>
@@ -126,7 +127,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\TankBlasterSimpleAIService.cs" />
     <Compile Include="Models\State\BoardTile.cs" />
     <Compile Include="Models\State\Bomb.cs" />
     <Compile Include="Models\Actions\BotAction.cs" />
