@@ -2,11 +2,15 @@
 {
     public class AllyMapPoint
     {
+        public int BoardTile { get; set; }
+
+        public int Danger { get; set; }
+
         public int Result 
         {
             get
             {
-                return 0; 
+                return BoardTile + Danger; 
                 
             }
         }

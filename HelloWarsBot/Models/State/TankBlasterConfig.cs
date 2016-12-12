@@ -8,5 +8,6 @@
         public int MissileBlastRadius { get; set; }
         public int RoundsBetweenMissiles { get; set; }
         public int RoundsBeforeIncreasingBlastRadius { get; set; }
+        public bool IsFastMissileModeEnabled { get; set; }
     }
 }

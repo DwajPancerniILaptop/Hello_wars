@@ -2,24 +2,26 @@
 using System.Drawing;
 using HelloWarsBot.BusinessLogic.Interface;
 using HelloWarsBot.Models.State;
+using HelloWarsBot.Models.Algorithm;
 
 namespace HelloWarsBot.BusinessLogic
 {
     public class BlastRadiusHelper : IBlastRadiusHelper
     {
         private BotArenaInfo _arenaInfo;
+        private AlgorithmParameter _algorithmParameter;
 
-        public void Initialize(BotArenaInfo arenaInfo)
+        public void Initialize(BotArenaInfo arenaInfo, AlgorithmParameter algorithmParameter)
         {
             _arenaInfo = arenaInfo;
         }
 
-        public List<Point> CalculateBombRadius(Point point)
+        public List<LocationPoint> CalculateBombRadius(Point point)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Point> CalculateMissileRadius(Point point)
+        public List<LocationPoint> CalculateMissileRadius(Point point)
         {
             throw new System.NotImplementedException();
         }
