@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-using HelloWarsBot.Models;
 using HelloWarsBot.Models.Actions;
 using HelloWarsBot.Models.BotInfo;
 using HelloWarsBot.Models.State;

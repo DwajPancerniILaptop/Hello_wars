@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using HelloWarsBot.BusinessLogic;
+using HelloWarsBot.BusinessLogic.Interface;
 using HelloWarsBot.Controller.Interface;
 using HelloWarsBot.Models.Actions;
 using HelloWarsBot.Models.BotInfo;
@@ -22,10 +24,8 @@ namespace HelloWarsBot.Controller
         [HttpPost]
         public BotMove PerformNextMove(BotArenaInfo arenaInfo)
         {
-            //var aiService = new TankBlasterSimpleAIService(false, true, 99999, 8);
-            //var result = aiService.CalculateNextMove(arenaInfo);
-            BotMove botMove = new BotMove(); 
-            return botMove;
+            IHelloWarsBotService helloWarsBotController = new HelloWarsBotService();
+            return helloWarsBotController.CalculateNextMove(arenaInfo);
         }
     }
 }

@@ -114,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="BusinessLogic\Interface\" />
     <Folder Include="Image\" />
     <Folder Include="Models\Algorithm\" />
   </ItemGroup>
@@ -122,6 +121,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BusinessLogic\BlastRadiusHelper.cs" />
+    <Compile Include="BusinessLogic\HelloWarsBotService.cs" />
+    <Compile Include="BusinessLogic\Interface\IBlastRadiusHelper.cs" />
+    <Compile Include="BusinessLogic\Interface\IHelloWarsBotService.cs" />
+    <Compile Include="BusinessLogic\Interface\ILocationHelper.cs" />
+    <Compile Include="BusinessLogic\LocationHelper.cs" />
     <Compile Include="Controller\Interface\IHelloWarsBotController.cs" />
     <Compile Include="Controller\HelloWarsBotController.cs" />
     <Compile Include="Global.asax.cs">
