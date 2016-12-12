@@ -1,9 +1,9 @@
-﻿using HelloWarsBot.Models.BotInfo;
+﻿using HelloWarsBot.Models.State;
 
 namespace HelloWarsBot.BusinessLogic.Interface
 {
     public interface ILocationHelper
     {
-        void Initialize(BotInfo arenaInfo);
+        void Initialize(BotArenaInfo arenaInfo);
     }
 }

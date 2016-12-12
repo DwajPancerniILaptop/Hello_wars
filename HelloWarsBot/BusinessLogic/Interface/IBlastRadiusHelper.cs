@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using HelloWarsBot.Models.BotInfo;
+using HelloWarsBot.Models.State;
 
 namespace HelloWarsBot.BusinessLogic.Interface
 {
     public interface IBlastRadiusHelper
     {
-        void Initialize(BotInfo arenaInfo);
+        void Initialize(BotArenaInfo arenaInfo);
 
-        List<Point> CalculateRadius(Point point);
+        List<Point> CalculateBombRadius(Point point);
+
+        List<Point> CalculateMissileRadius(Point point);
     };
 }

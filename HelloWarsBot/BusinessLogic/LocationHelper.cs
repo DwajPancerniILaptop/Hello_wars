@@ -1,13 +1,13 @@
 ﻿using HelloWarsBot.BusinessLogic.Interface;
-using HelloWarsBot.Models.BotInfo;
+using HelloWarsBot.Models.State;
 
 namespace HelloWarsBot.BusinessLogic
 {
     public class LocationHelper : ILocationHelper
     {
-        private BotInfo _arenaInfo;
+        private BotArenaInfo _arenaInfo;
 
-        public void Initialize(BotInfo arenaInfo)
+        public void Initialize(BotArenaInfo arenaInfo)
         {
             _arenaInfo = arenaInfo;
         }

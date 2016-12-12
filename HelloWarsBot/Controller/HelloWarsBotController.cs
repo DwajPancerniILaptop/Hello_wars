@@ -3,6 +3,7 @@ using HelloWarsBot.BusinessLogic;
 using HelloWarsBot.BusinessLogic.Interface;
 using HelloWarsBot.Controller.Interface;
 using HelloWarsBot.Models.Actions;
+using HelloWarsBot.Models.Algorithm;
 using HelloWarsBot.Models.BotInfo;
 using HelloWarsBot.Models.State;
 
@@ -24,8 +25,9 @@ namespace HelloWarsBot.Controller
         [HttpPost]
         public BotMove PerformNextMove(BotArenaInfo arenaInfo)
         {
-            IHelloWarsBotService helloWarsBotController = new HelloWarsBotService();
-            return helloWarsBotController.CalculateNextMove(arenaInfo);
+            var algorithmParameter = new AlgorithmParameter();
+            IHelloWarsBotService helloWarsBotController = new HelloWarsBotService(arenaInfo, algorithmParameter);
+            return helloWarsBotController.CalculateNextMove();
         }
     }
 }

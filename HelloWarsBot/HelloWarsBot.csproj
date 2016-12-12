@@ -115,7 +115,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Image\" />
-    <Folder Include="Models\Algorithm\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -132,6 +131,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Algorithm\AlgorithmParameters.cs" />
+    <Compile Include="Models\Algorithm\AllyMapPoint.cs" />
+    <Compile Include="Models\Algorithm\EnemyMapPoint.cs" />
     <Compile Include="Models\State\BoardTile.cs" />
     <Compile Include="Models\State\Bomb.cs" />
     <Compile Include="Models\Actions\BotAction.cs" />
