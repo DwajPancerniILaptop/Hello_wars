@@ -14,6 +14,7 @@ namespace HelloWarsBot.BusinessLogic
         public void Initialize(BotArenaInfo arenaInfo, AlgorithmParameter algorithmParameter)
         {
             _arenaInfo = arenaInfo;
+            _algorithmParameter = algorithmParameter;
         }
 
         public List<LocationPoint> CalculateBombRadius(Point point)

@@ -54,18 +54,18 @@ namespace HelloWarsBot.BusinessLogic
                         continue;
                     }
 
-                    var temp_distance = gScore[current] + map[neighbor.X, neighbor.Y].Result;
+                    var tempDistance = gScore[current] + map[neighbor.X, neighbor.Y].Result;
                     if (!openSet.Contains(neighbor))
                     {
                         openSet.Add(neighbor);
                     }
-                    else if (temp_distance >= gScore[neighbor])
+                    else if (tempDistance >= gScore[neighbor])
                     {
                         continue;
                     }
 
                     cameFrom[neighbor] = current;
-                    gScore[neighbor] = temp_distance;
+                    gScore[neighbor] = tempDistance;
                     fScore[neighbor] = gScore[neighbor] + locationHelper.GetStreightLine(neighbor);
                 }
             }

@@ -7,25 +7,23 @@ namespace HelloWarsBot.BusinessLogic
 {
     public class HelloWarsBotService : IHelloWarsBotService
     {
-        private BotArenaInfo _arenaInfo;
+        private readonly BotArenaInfo _arenaInfo;
         private AllyMapPoint[,] _allyMap;
         private EnemyMapPoint[,] _enemyMap;
-        private ILocationHelper _locationHelper;
-        private IBlastRadiusHelper _blastRadiusHelper;
-        private IPathFinding _pathFinding;
-        private AlgorithmParameter _algorithmParameter;
+        private readonly ILocationHelper _locationHelper;
+        private readonly IBlastRadiusHelper _blastRadiusHelper;
+        private readonly IPathFinding _pathFinding;
 
         public HelloWarsBotService(BotArenaInfo arenaInfo, AlgorithmParameter algorithmParameter)
         {
             _arenaInfo = arenaInfo;
-            _algorithmParameter = algorithmParameter;
 
             InitializeArrays();
 
             _locationHelper = new LocationHelper();
-            _locationHelper.Initialize(_arenaInfo, _algorithmParameter);
+            _locationHelper.Initialize(_arenaInfo, algorithmParameter);
             _blastRadiusHelper = new BlastRadiusHelper();
-            _blastRadiusHelper.Initialize(_arenaInfo, _algorithmParameter);
+            _blastRadiusHelper.Initialize(_arenaInfo, algorithmParameter);
             _pathFinding = new PathFinding();
         }
 
@@ -37,6 +35,9 @@ namespace HelloWarsBot.BusinessLogic
                 for (int j = 0; j < _arenaInfo.GameConfig.MapHeight; j++)
                 {
                     _allyMap[i, j].BoardTile = _locationHelper.GetPointsForBoardTile(i, j);
+                    _allyMap[i, j].DistanceToSideOfMap = _locationHelper.GetPointForCloseToSideOfMap(i, j);
+                    _allyMap[i, j].DistanceToOpponent = _locationHelper.GetPointForDistanceToEnemy(i, j);
+                    _allyMap[i, j].Neighbor = _locationHelper.GetPointForNeighborTiles(i, j);
                 }
             }
 

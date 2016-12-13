@@ -13,6 +13,16 @@ namespace HelloWarsBot.BusinessLogic.Interface
 
         List<Point> GetNeighbours(Point point);
 
+        List<Point> GetNeighbours(int x, int y);
+
         int GetStreightLine(Point point);
+
+        int GetStreightLine(int x, int y);
+
+        int GetPointForCloseToSideOfMap(int x, int y);
+
+        int GetPointForDistanceToEnemy(int x, int y);
+
+        int GetPointForNeighborTiles(int x, int y);
     }
 }

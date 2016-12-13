@@ -25,7 +25,7 @@ namespace HelloWarsBot.Controller
         [HttpPost]
         public BotMove PerformNextMove(BotArenaInfo arenaInfo)
         {
-            var algorithmParameter = new AlgorithmParameter();
+            var algorithmParameter = new AlgorithmParameter(arenaInfo.GameConfig);
             IHelloWarsBotService helloWarsBotController = new HelloWarsBotService(arenaInfo, algorithmParameter);
             return helloWarsBotController.CalculateNextMove();
         }
