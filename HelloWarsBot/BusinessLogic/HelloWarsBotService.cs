@@ -1,4 +1,7 @@
-﻿using HelloWarsBot.BusinessLogic.Interface;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Drawing;
+using System.Linq;
+using HelloWarsBot.BusinessLogic.Interface;
 using HelloWarsBot.Models.Actions;
 using HelloWarsBot.Models.Algorithm;
 using HelloWarsBot.Models.State;
@@ -30,6 +33,8 @@ namespace HelloWarsBot.BusinessLogic
         public BotMove CalculateNextMove()
         {
             BotMove botMove = new BotMove();
+            Point bestPoint = new Point();
+            int minPoint = 9999999;
             for (int i = 0; i < _arenaInfo.GameConfig.MapWidth; i++)
             {
                 for (int j = 0; j < _arenaInfo.GameConfig.MapHeight; j++)
@@ -38,10 +43,16 @@ namespace HelloWarsBot.BusinessLogic
                     _allyMap[i, j].DistanceToSideOfMap = _locationHelper.GetPointForCloseToSideOfMap(i, j);
                     _allyMap[i, j].DistanceToOpponent = _locationHelper.GetPointForDistanceToEnemy(i, j);
                     _allyMap[i, j].Neighbor = _locationHelper.GetPointForNeighborTiles(i, j);
+
+                    if (_allyMap[i, j].Result < minPoint)
+                    {
+                        bestPoint = new Point(i,j);
+                        minPoint = _allyMap[i, j].Result;
+                    }
                 }
             }
-
-            botMove.Direction = _pathFinding.CalculatePath(_arenaInfo.BotLocation, _arenaInfo.OpponentLocations[0], _allyMap, _locationHelper);
+            
+            botMove.Direction = _pathFinding.CalculatePath(_arenaInfo.BotLocation, bestPoint, _allyMap, _locationHelper);
 
             return botMove;
         }

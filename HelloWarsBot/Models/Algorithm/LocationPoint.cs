@@ -6,6 +6,6 @@ namespace HelloWarsBot.Models.Algorithm
     {
         public Point Location { get; set; }
 
-        public int Point { get; set; }
+        public int Penalty { get; set; }
     }
 }

@@ -12,5 +12,9 @@ namespace HelloWarsBot.BusinessLogic.Interface
         List<LocationPoint> CalculateBombRadius(Point point);
 
         List<LocationPoint> CalculateMissileRadius(Point point);
+
+        List<LocationPoint> CalculatePenaltyForBombs();
+
+        List<LocationPoint> CalculateMissleExplosion(Missile missle);
     };
 }
